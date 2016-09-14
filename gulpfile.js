@@ -15,7 +15,7 @@ gulp.task('compile',['clean'], function(){
 				.pipe(ts(tscConfig.compilerOptions))				
 				.pipe(concat('output.js'))
 				.pipe(sourcemaps.write())
-				.pipe(gulp.dest('dest'));
+				.pipe(gulp.dest('dist'));
 	return tsresult;
 });
 
