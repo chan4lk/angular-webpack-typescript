@@ -5,8 +5,10 @@ module.exports = {
         vendor: ["jquery", "angular", "bootstrap"]
     },
     output: {
-        filename: "dist/app.bundle.js"
+        filename: "dist/[name].bundle.js",
+        sourceMapFilename: "dist/[name].js.map",
     },
+    devtool: "source-map",
     resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
     },
@@ -16,6 +18,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"dist/vendor.bundle.js")
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
+        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"dist/[name].bundle.js"),
+        new webpack.optimize.UglifyJsPlugin()        
     ]
 }
