@@ -2,7 +2,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: {
         app: './app',
-        vendor: ["jquery", "angular"]
+        vendor: ["jquery", "angular", "bootstrap"]
     },
     output: {
         filename: "dist/app.bundle.js"
