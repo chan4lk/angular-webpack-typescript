@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist",
     "target": "ES5",
-    "module": "system",
+    "module": "commonjs",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -19,7 +19,7 @@
     "typings/index.d.ts",
     "app/app.module.ts",
     "app/app.component.ts",
-    "app/app.init.ts"
+    "app/index.ts"
   ],
   "outFile": "output.js",
   "exclude": [
